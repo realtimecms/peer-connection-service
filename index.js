@@ -338,7 +338,7 @@ async function postMessage(props, { client, service }, emit, conversation) {
   const channelId = props.to
   let lastTime = lastMessageTime.get(channelId)
   const now = new Date()
-  if(now.toISOString() <= lastTime) {
+  if(lastTime && now.toISOString() <= lastTime.toISOString()) {
     lastTime.setTime(lastTime.getTime() + 1)
   } else {
     lastTime = now

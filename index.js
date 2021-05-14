@@ -1,8 +1,7 @@
-const App = require("@live-change/framework")
+const app = require("@live-change/framework").app()
 const validators = require("../validation")
 const { createTurnConfiguration, releaseTurnConfiguration, turnExpireTime } = require('./turn.js')
 const ReactiveDao = require('@live-change/dao')
-const app = new App()
 
 require('../../i18n/ejs-require.js')
 const i18n = require('../../i18n')

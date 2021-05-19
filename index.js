@@ -13,8 +13,8 @@ const definition = app.createServiceDefinition({
 })
 
 const { getAccess, hasRole, checkIfRole, getPublicInfo } =
-    require("../access-control-service/access.js")(app, definition)
-const { checkPrivAccess } = require('../messages-service/privAccess.js')(app, definition)
+    require("../access-control-service/access.js")(definition)
+const { checkPrivAccess } = require('../messages-service/privAccess.js')(definition)
 
 const PublicSessionInfo = definition.foreignModel('accessControl', 'PublicSessionInfo')
 
